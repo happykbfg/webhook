@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
-@FeignClient( name="webhook", url="${config_server_refresh_uri:http://localhost:9001/actuator}" )
+@FeignClient( name="webhook", url="${config_server_host:http://localhost:9001}" )
 public interface IWebhookController {
-    @PostMapping("/bus-refresh")
+    @PostMapping("/actuator/bus-refresh")
     @ApiOperation(value="Notify config changes to config server")
     public String notifyConfigChanges();
 }
