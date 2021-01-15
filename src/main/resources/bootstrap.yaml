@@ -10,3 +10,5 @@ spring:
     config:
       uri: ${config_servers:http://localhost:9001}
       searchPaths: ${spring.application.name}
+      default-label: main
+      
