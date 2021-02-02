@@ -21,8 +21,8 @@ public class Controller {
     @GetMapping("/greeting/{message}")
     @ApiOperation(value="Test Spring cloud bus")
     public String echo(@PathVariable String message) {
-    	log.info("### Received: webhook > /greeting/${message}");
-    	log.info("### Sent: ${greeting} => ${message}");
+    	log.info("### Received: webhook > /greeting/"+message);
+    	log.info("### Sent: "+greeting + "=>" + message);
         return greeting + " => " + message;
     } 
 }
